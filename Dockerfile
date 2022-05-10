@@ -4,7 +4,7 @@ WORKDIR /usr/src/app
 
 COPY /main .
 
-RUN CGO_ENABLED=0 GOOS=linux go build main.go
+RUN CGO_ENABLED=0 GOOS=linux go build -ldflags "-s -w" main.go
 
 FROM scratch
 
